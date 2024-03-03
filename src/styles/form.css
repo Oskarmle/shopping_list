@@ -1,0 +1,46 @@
+/*************************** Shopping list form *******************************/
+.shopping-list_Form{
+    margin-top: 12vh;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+  
+  .shopping-list_Form label{
+    text-align: center;
+    align-self: center;
+    width: 100vw;
+    color: var(--text-color);
+    font-size: 25px;
+    
+  }
+  .line{
+    height: 2px;
+    background-color: var(--cta_bg-color);
+    margin-bottom: 3vh;
+    margin-top: 0.3vh;
+  }
+  
+  .inputfield{
+    height: 4vh;
+    padding-left: 2vw;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--text-color);
+    width: 48vw;
+    align-self: center;
+    font-size: 1.8vh;
+  }
+  
+  .add{
+    margin-top: 2vh;
+    height: 4vh;
+    width: 48vw;
+    font-size: 2.3vh;
+    font-weight: 700;
+    background-color: var(--cta_bg-color);
+    color: var(--cta_text-color);
+    border: none;
+    border-radius: 5px;
+    align-self: center;
+  }
