@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
 import Shopping_item from './Shopping_item'
 
-export default function feed() {
+export default function Feed() {
   const [data, setData] = useState([])
   const [item, setItem] = useState("")
 
