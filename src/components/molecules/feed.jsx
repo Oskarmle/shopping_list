@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { createClient } from '@supabase/supabase-js'
 import Shopping_item from './Shopping_item'
+import { subscribe, unsubscribe } from '@/eventSystem/eventBus'
 
 export default function Feed() {
   const [data, setData] = useState([])
@@ -12,7 +13,21 @@ export default function Feed() {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV2d3pvZXJhbHVpbnZhdHFnbHBqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDQ3MTYyMzcsImV4cCI6MjAyMDI5MjIzN30.GrYxLJ-halY45SGpXzqTbBciRv3EXr6yXg0qXFNSBZQ"
   )
 
-  // henter data fra supabase tabel
+  useEffect(() => {
+    console.log("this shows that useEffect is run")
+    function handleEvent(){
+      fetchUserData()
+      console.log("the handleEvent function is called")
+    };
+    subscribe("FormAddItemFunction", handleEvent)
+    console.log("event called this function")
+    
+    return () => {
+      unsubscribe("FormAddItemFunction", handleEvent)
+    };
+    
+  }, [fetchUserData]);
+  
   async function fetchUserData() {
     const {data, error} = await supabase
     .from("shopping-items")
@@ -21,10 +36,6 @@ export default function Feed() {
     console.log(error)
     setData(data)
   }
-
-  useEffect(() => {
-    fetchUserData()
-  }, [])
 
   const handleDelete = async function(id){
     const {data, error} = await supabase

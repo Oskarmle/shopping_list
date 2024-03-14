@@ -1,6 +1,4 @@
 import React from "react";
-// import Feed from "../components/molecules/Feed";
-// import Form from "../components/molecules/Form";
 import Form from "@/components/molecules/form";
 import Feed from "@/components/molecules/feed";
 

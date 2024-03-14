@@ -1,6 +1,7 @@
 :root{
   --background-color: #301a94;
   --cta_bg-color: #009b8e;
+  --cta_bg-color_active: #007a70;
   --cta_text-color: #e0e0e0;
   --form_bg-color: #009b8e;
   --text-color: #e0e0e0;
